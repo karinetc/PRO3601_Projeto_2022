@@ -9,5 +9,5 @@ EXPORT File_base_comp := MODULE
 		INTEGER1 inadimplente;
 		
 		END;
-		EXPORT File:=DATASET('~thor::pro3601::quod::ktc::base',Layout,Flat);
+		EXPORT File:=DATASET('~pro3601::quod::base',Layout,Flat);
 END;
