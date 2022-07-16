@@ -21,4 +21,4 @@ Concatenacao := RECORD
 TabelaConc := SORT (TABLE(recset, Concatenacao, data_base), data_base);
 //OUTPUT(TabelaConc);
 
-OUTPUT( TabelaConc , ,'~pro3601::quod::acumulado_2021' );
+OUTPUT( TabelaConc , ,'~pro3601::quod::acumulado_2021', OVERWRITE );
