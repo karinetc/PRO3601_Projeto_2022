@@ -11,5 +11,5 @@
     STRING8 Data_mov;
     STRING2 Comando;
 		END;
-		EXPORT File:=DATASET('~ktc::base_inadimplencia_ccf.csv',Layout,CSV(heading(1)));
+		EXPORT File:=DATASET('~pro3601::quod::base_inadimplencia_ccf.csv',Layout,CSV(heading(1)));
 END;
