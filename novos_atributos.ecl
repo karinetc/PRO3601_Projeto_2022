@@ -53,7 +53,7 @@ END;
 
 ds1 := SORT (TABLE(base_trans, myrec1), id_consumidor, data_base);
                                                                                      
-//ds1;
+ds1;
                                                                                                                       
                                                                                                                       
 myrec2 := RECORD
@@ -65,7 +65,7 @@ ds2 := DEDUP(  SORT (
 											), data_base
 											) );
                                                                                                                       
-//ds2;     
+ds2;     
 
 mysrt := DEDUP(GROUP(SORT(ds1,id_consumidor, data_base),id_consumidor),id_consumidor, data_base);
 //mysrt;                                                                            
@@ -94,15 +94,15 @@ myjoin := DEDUP(SORT(JOIN(mysrt,ds2,LEFT.data_base<>RIGHT.data_base,MyTransf(LEF
 myjoin2 := DEDUP(SORT(JOIN(myjoin,ds2,LEFT.data_base<>RIGHT.data_base,MyTransf(LEFT, RIGHT), ALL),id_consumidor, data_base)
 ,id_consumidor, data_base);
 
-//myjoin2;
+myjoin2;
 
-// rec2 := RECORD
-  // data_base:= myjoin2.data_base;
-	// cnt := COUNT(GROUP);
-// END;
+rec2 := RECORD
+  data_base:= myjoin2.data_base;
+	cnt := COUNT(GROUP);
+END;
 
-// crosstab := SORT (TABLE(myjoin2,rec2,myjoin2.data_base), data_base);
-// crosstab;
+crosstab := SORT (TABLE(myjoin2,rec2,myjoin2.data_base), data_base);
+crosstab;
 
 
 
